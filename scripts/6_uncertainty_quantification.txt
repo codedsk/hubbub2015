@@ -25,6 +25,7 @@ as a part of he PRISM project that provides different methods for performing
 uncertainty quantification. It is an open source project, so you can download
 the library from PyPI, but we've baked it right into Rappture so you can enable
 your users to run simulations that incorporate uncertainty.
+Let's check out how it works!
 
 Consider a typical Rappture based simulation tool that accepts numbers as
 inputs. The user running a simulation would enter an exact value and the output

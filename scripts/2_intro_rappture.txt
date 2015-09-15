@@ -9,19 +9,19 @@ to simulation the quantum effects inside of resonant tunnenling diodes.
 Back then, you wrote a program and maybe you got to share it with one or two
 people in your group. If anyone from outside of your group wanted to run your
 program, they first had to write a letter to your professor, include $10, then
-these guys would go find your program, copy it on to magnetic tape, and then
-they would send you the copy. Then you got to load it on your computer, fight
-with compiling it and understanding what it was doing. As you can imagine, not
-many people were up for all that work, so we can probably cound on one hand how
-many times the program was run by people outside of the group. About 15 years
-later this same simulator was placed on nanohub.org with a graphical user
-interface and when we look at it now, we can see that there is a community of
-people interested in it. there are over 1500 people who have run it, it has
-been cited a number of times, people are asking questions about it and writing
-reviews. So while the magnetic tape cost $10, having a live tool that others
-can run and build upon is priceless. This is really true because as you perform
-your research, one of the things you will have to keep in mind is the impact
-that your research has on the field and the world. A lot of people say their
+these guys would go find your program, copy it on to magnetic tape, and send
+you the copy. Next, you had to load it on your computer, fight with compiling
+it and understanding what it was doing. As you can imagine, not many people
+were up for all that work, so we can probably count on one hand how many times
+the program was run by people outside of the group. About 15 years later this
+same simulator was placed on nanohub.org with a graphical user interface and
+when we look at it now, we can see that there is a community of people
+interested in it. There are over 1500 people who have run it, it has been cited
+a number of times, people are asking questions about it and writing reviews. So
+while the magnetic tape cost $10, having a live tool that others can run and
+build upon is priceless. This is really true because as you perform your
+research, one of the things you will have to keep in mind is the impact that
+your research has on the field and the world. A lot of people say their
 research has impact or has a bunch of people using it. Putting up tools on
 nanohub allows you to prove it.
 

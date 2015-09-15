@@ -78,4 +78,9 @@ environment.
 Lastly, you can use sftp to transfer files. You just need your hub username and
 password and an sftp client.
 
-If you signed up for the hub using a third party authentication service, like Google or Facebook, you will need to set a local hub password. To do this, navigate your web browser to your hub Dashboard. On the left side of the web page is a link named "Account". Click that link and you will be prompted to setup a local hub password. This is the same place you go to change your passowrd.
+If you signed up for the hub using a third party authentication service, like
+Google or Facebook, you will need to set a local hub password. To do this,
+navigate your web browser to your hub Dashboard. On the left side of the web
+page is a link named "Account". Click that link and you will be prompted to
+setup a local hub password. This is the same place you go to change your
+passowrd.

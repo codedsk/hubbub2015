@@ -1,0 +1,71 @@
+We just went through an example of building and running a Rappture tool and
+that was pretty easy, but it feels like there was some magic there. How does it
+work?
+
+We started off by using hte Rappture Builder to build our graphical user
+interface. The builder produces two files, a skeleton program and a tool.xml
+file which describes how to run the simulation code, the inputs objects, and
+the outputs of the gui.
+
+Next, we launch the graphical user interface using the "rappture" command in
+the terminal. The Rappture runner reads the tool.xml file and generates a
+graphical user interface for the user. The user adjusts the inputs and when
+ready to perform the simulation, presses the simulate button. This step
+produces a file named "driver.xml"
+
+The tool.xml and driver.xml files are nearly the same. The driver contains all
+of the information that the tool.xml file does, but it also includes the
+current input values that the user wanted to run the simulation with.
+
+The driver.xml file is give to your simulation program, which reads the input
+values, performs the scientific simulation, and writes the outputs to a file
+named run.xml
+
+The run.xml file is nearly a copy of the driver.xml file. The run.xml file
+contains all of the information from the driver.xml file, but it also contains
+outputs from the simulation program.
+
+The Rappture gui reads the run.xml file to visualize the outputs and the
+run.xml file is stashed away in a results directory.
+
+So one more time. You build your graphical user interface with the Rappture
+builder and it produces a tool.xml file. The Rappture runner reads the tool.xml
+file and generates a graphical user interface for the user. The user adjusts
+the input values and presses simulate to kick off the simulation. This produces
+a driver.xml file which is read by the simulation program for the simulation's
+input values. The simulation program performs the simulation and stores its
+output in the run.xml file. The simulation program writes the run.xml file to
+disk and signals to the graphical user interface that the simulation is
+complete. Lastly the graphical user interface reads the run.xml file and
+visualizes the outputs.
+
+In the end, the run file is a complete record of the run. It contains all of
+the tool definition from the tool.xml, the input values from the driver.xml and
+the output values from the simulation. With the run.xml file, you can load old
+results using "rappture -load" or you can rerun an old simulation using the
+run.xml file as a tool.xml file.
+
+There is one piece of information that I kind of glossed over. That is how your
+program gets invoked. Your program needs to read its inputs from the driver.xml
+file. If you saved a skeleton program from the Rappture builder, then it
+already has most of the commands to read those inputs. We wrote a library that
+you can include in your program to help communicate with the Rappture graphical
+user interface.
+
+Inside the tool.xml file is a line that lists the command that will be used to
+launch your simulation program. For a python program it looks like this. These
+funny @tool an @driver terms are placeholders that the Rappture gui will
+translate to the directory where your tool.xml file was found and the name of
+your driver.xml file respectively. The driver.xml file name is listed as an
+argument to your program. Your program reads the argument list and can use the
+Rappture library to open the file and retrieve input values from it and place
+output values back in it.
+
+You can use the object locator path to communicate with the Rappture library.
+Object naming follows the tags of the xml tree structure. So if you have xml
+that looks like this on the left and you wanted to access the current value of
+the number object, you could locate the value by tracing it's parent tags,
+using dots to separate tags and placing id attributes in parenthesis. Start
+with the input tag, then dot number, for the number tag, parenthesis
+temperature for the temperature id attribute, and dot current for the current
+value. Similarly, locating the xy component of the output curve can be done.
